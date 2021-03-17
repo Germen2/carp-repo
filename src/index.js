@@ -11,7 +11,14 @@ app.set('views', path.join(__dirname,'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-uriDB = 'mongodb+srv://german:5j0HsHdSu73ERa2O@cluster0.jvyx1.mongodb.net/test'
+uriDB = ''
+
+fs.readFile('./uriDB.txt', 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    uriDB = data;
+  });
 
 mongoRead = async (database, collection, query) =>{
     const client = new MongoClient(uriDB, mongoDB)
