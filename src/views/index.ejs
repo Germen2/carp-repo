@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> hello world </h1>
+    <div id='a'></div>
+    
+
+    <script>
+        data = '<%= data %>'
+        console.log([data])
+        let string1 = "";
+        let string2 = "";
+        const object1 = {a: 1, b: 2, c: 3};
+
+        for (let property1 in object1) {
+        string1 += object1[property1];
+        }
+
+        Object.values(object1).forEach(item => {string2 += item});
+
+        console.log(string1);
+        console.log(string2);
+
+        data.forEach(output);
+
+        function output(item, index, array){
+            console.log(index, item)
+        }
+        //document.getElementById('a').innerHTML = data;
+    </script>
+    
+</body>
+</html>
